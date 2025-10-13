@@ -13,7 +13,8 @@ function generateRandom() {
 }
 
 do {
-  percobaan++, generateRandom();
+  percobaan++;
+  generateRandom();
   console.log(`Percobaan ${percobaan}: Username yang dihasilkan: ${username}`);
   puas = prompt("Apakah Anda puas dengan username ini? (y/n):");
   
