@@ -17,7 +17,7 @@ do {
   } while (true);
 
   console.log(`kuadrat dari ${angka} adalah : ${angka * angka}`);
-  console.log(typeof(angka));
+  // console.log(typeof(angka));
   lanjut = prompt("Apakah ingin melanjutkan? (y/n) :");
 } while (lanjut.toLowerCase() === "y");
 
