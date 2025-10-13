@@ -12,6 +12,7 @@ do {
   angkaRandom = randomValue();
 
   if (angkaRandom % 2 === 0) {
+    console.log(`Percobaan ${percobaan}: ${angkaRandom} (genap, coba lagi)`);
     console.log(`Angka genap ditemukan: ${angkaRandom} dalam ${percobaan} percobaan`);
     break;
   } else {
