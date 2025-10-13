@@ -35,7 +35,6 @@ do {
   } else {
     break; // soal terakhir otomatis selesai
   }
-
 } while (lanjut === "y");
 
 console.log(`Kuis selesai! Skor: ${benar} / ${nomorSoal}`);
