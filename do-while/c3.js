@@ -29,10 +29,3 @@ do{
 
 console.log("Password berhasil dibuat:" + password);
 
-
-
-
-
-// Input form
-// Cek apakah inputan terdapat 6 karakter
-// Cek apakah inputan ada angka dan karakter
