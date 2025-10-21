@@ -1,2 +1,2 @@
-let teks = "   hello world   ";
-let langkah = 0;
+let waktu = 10;
+let tombolDitekan = false;
