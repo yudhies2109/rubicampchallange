@@ -5,7 +5,6 @@ let i = 0;
 while (!ditemukan) {
     for(; i < kata.length; i++){
 
-        // let cekKata = kata[i];
     
         if (kata[i] == "a") {
             console.log("Huruf 'a' ditemukan di posisi:", i + 1);
