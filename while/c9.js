@@ -5,9 +5,9 @@ let iterasi = 0;
 while (angka <= 1000) {
 
     iterasi++;
-    console.log(`Iterasi ${iterasi}: ${angka}^2 = ${angka * angka}`)
+    console.log(`Iterasi ${iterasi}: ${angka}^2 = ${angka * angka}`);
     angka = angka * angka;    
-    
+
 }
 
 
