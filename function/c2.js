@@ -5,10 +5,10 @@ function getCurrentTime(){
     const minutes = callTime.getMinutes();
     const seconds = callTime.getSeconds();
 
-    console.log(`Waktu sekarang: ${hours}:${minutes}:${seconds} `);
+    let waktu = `${hours}:${minutes}:${seconds}`;
+
+    return waktu;
 }
 
-getCurrentTime()
-
-// let waktu = getCurrentTime();
-// console.log("Waktu sekarang: " + waktu);
+let waktu = getCurrentTime();
+console.log("Waktu sekarang: " + waktu);
