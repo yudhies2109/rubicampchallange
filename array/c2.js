@@ -12,3 +12,4 @@ function analyzeElements(arr){
   }
   
   console.log(analyzeElements([10, "hello", true]));
+  console.log(analyzeElements([1, 2, 3]));
