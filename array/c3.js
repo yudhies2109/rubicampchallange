@@ -30,6 +30,5 @@ function manageStack(arr, operations) {
     }
 }
 
-// console.log(manageStack([1, 2], ["push:3", "push:4", "pop"]));
-
+console.log(manageStack([1, 2], ["push:3", "push:4", "pop"]));
 console.log(manageStack([], ["push:a", "push:b", "pop", "push:c"]));
