@@ -20,47 +20,47 @@ switch (bulan) {
         break;
 
     case 2:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Februari) memiliki ${jmlhHari} hari`)
         break;
 
     case 3:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Maret) memiliki ${jmlhHari} hari`)
         break;
 
     case 4:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (April) memiliki ${jmlhHari} hari`)
         break;
 
     case 5:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Mei) memiliki ${jmlhHari} hari`)
         break;
 
     case 6:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Juni) memiliki ${jmlhHari} hari`)
         break;
 
     case 7:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Juli) memiliki ${jmlhHari} hari`)
         break;
 
     case 8:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Agustus) memiliki ${jmlhHari} hari`)
         break;
 
     case 9:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (September) memiliki ${jmlhHari} hari`)
         break;
 
     case 10:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Oktober) memiliki ${jmlhHari} hari`)
         break;
 
     case 11:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (November) memiliki ${jmlhHari} hari`)
         break;
 
     case 12:
-        console.log(`Bulan ke- ${bulan} (Januari) memiliki ${jmlhHari} hari`)
+        console.log(`Bulan ke- ${bulan} (Desember) memiliki ${jmlhHari} hari`)
         break;
 
     default:
