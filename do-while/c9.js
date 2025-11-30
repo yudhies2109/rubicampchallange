@@ -1,32 +1,26 @@
 const prompt = require("prompt-sync")();
 
-let tahapInstalasi = ["Download file", "Extract file", "Install program", "Setup konfigurasi"];
-let berhasil = false;
+let tahapInstalasi = ["Download file", "Extract file", "Copy File", "Install program", "Setup konfigurasi"];
+let stop = false;
 let percobaan = 0;
-
-function instalasiSoftware() {
-  percobaan++;
-  berhasil = Math.random() > 0.5;
-  console.log(`=== PERCOBAAN INSTALASI ${percobaan} ===`);
-
-  if (berhasil || percobaan === 3) {
-    for (let i = 0; i < tahapInstalasi.length; i++) {
-      console.log(`${tahapInstalasi[i]}...berhasil`);
-    }
-    console.log("Instalasi berhasil dalam " + percobaan + " percobaan!");
-  } else {
-    for (let i = 0; i < tahapInstalasi.length; i++) {
-      console.log(i === 3 ? `${tahapInstalasi[i]}... Gagal` : `${tahapInstalasi[i]}... selesai`);
-    }
-    console.log("Instalasi dibatalkan setelah " + percobaan + " percobaan.");
-  }
-}
+let Berhasil = false;
 
 do {
-  instalasiSoftware();
-      
-  if (!berhasil) {
-    cobaLagi = prompt("Instalasi gagal! Coba lagi? (y/n):");
-  }
+  percobaan++;
+  let gagal = Math.floor(Math.random() * tahapInstalasi.length + 1);
+  console.log(`=== PERCOBAAN INSTALASI ${percobaan}===`);
 
-} while (!berhasil && cobaLagi.toLowerCase() === "y");
+  for (let i = 0; i <= gagal; i++) {
+    if (i == tahapInstalasi.length) {
+      stop = true;
+      Berhasil = true;
+    } else {
+      console.log(`${tahapInstalasi[i]}... ${i == gagal ? "GAGAL" : "Berhasil"}`);
+    }
+  }
+  if (!stop) {
+    stop = prompt("Instalasi gagal! Coba lagi? (y/n):").toLowerCase() == "n" ? true : false;
+  }
+} while (!stop);
+
+console.log(`percobaan ${Berhasil ? "Berhasil" : "Gagal"} dalam ${percobaan} percobaan`);
