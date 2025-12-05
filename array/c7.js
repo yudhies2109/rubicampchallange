@@ -4,7 +4,6 @@ function transformArray(arr, operations) {
     let sumValues = transformed.reduce((acc, num) => num = acc + num) - 5;
     let processed = arr.length;
 
-
     transformed.forEach(num => {
         let result = num * multiply + add
         console.log(`Processing: ${num} -> ${result}`)
