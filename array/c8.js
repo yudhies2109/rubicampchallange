@@ -1,49 +1,32 @@
 function aggregateArray(arr) {
-    let isNumber = arr.every(items => typeof items === "number");
-    let isString = arr.every(items => typeof items === "string");
+    let isNumber = arr.every(item => typeof item === "number");
 
     if (isNumber) {
-        let sumValues = arr.reduce((num, acc) => num = num + acc);
-        let product = arr.reduce((num, acc) => num = num * acc);
-        let maxValues = arr.reduce((num, acc) => acc < num ? num : acc);
-        let minValues = arr.reduce((num, acc) => acc > num ? num : acc);
-        let sortedAsc = [...arr].sort((num, acc) => num - acc);
-        let sortedDesc = [...arr].sort((num, acc) => acc - num);
-
-
         return {
-            original: arr,
-            sum: sumValues,
-            product: product,
-            max: maxValues,
-            min: minValues,
-            sortedAsc: sortedAsc,
-            sortedDesc: sortedDesc
+            original: [...arr],
+            sum: arr.reduce((num, acc) => num = num + acc),
+            product: arr.reduce((num, acc) => num = num * acc),
+            max: arr.reduce((num, acc) => acc < num ? num : acc),
+            min: arr.reduce((num, acc) => acc > num ? num : acc),
+            sortedAsc: [...arr].sort((a, b) => a - b),
+            sortedDesc: arr.sort((a, b) => b - a)
         }
-    } else if (isString) {
-        let concatenated = arr.join("");
-        let maxValues = arr.reduce((acc, curr) =>
-            curr.length > acc.length ? curr : acc
-        );
-        let minValues = arr.reduce((acc, curr) =>
-            curr.length < acc.length ? curr : acc
-        );
-
-        let sortedAsc = [...arr].sort();
-        let sortedDesc = [...arr].sort().reverse();
-
+    } else {
         return {
-            original: arr,
-            concatenated: concatenated,
-            longest: maxValues,
-            shortest: minValues,
-            sortedAsc: sortedAsc,
-            sortedDesc: sortedDesc
-
+            original: [...arr],
+            concatenated: arr.join(""),
+            longest: arr.reduce((num, acc) => acc.length <= num.length ? num : acc),
+            shortest: arr.reduce((num, acc) => acc.length >= num.length ? num : acc),
+            sortedAsc: [...arr].sort(),
+            sortedDesc: arr.sort().reverse()
         }
     }
 
+
 }
+
+
+// Tulis function aggregateArray di sini
 
 console.log(aggregateArray([3, 1, 4, 1, 5, 9, 2, 6]));
 console.log(aggregateArray(["banana", "apple", "cherry", "date"]));
