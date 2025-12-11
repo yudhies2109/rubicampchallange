@@ -19,7 +19,7 @@ function searchArray(arr, criteria) {
     }
 
     if (type === "string") {
-        if (type === "string") {
+        if (condition === "contains") {
             found = arr.find(item => item.includes(value));
             filltered = arr.filter(item => item.includes(value));
             console.log("Ini Nilai found", typeof(found));
