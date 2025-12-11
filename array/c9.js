@@ -1,45 +1,30 @@
 function validateArrayData(arr) {
-    let isValid = arr.every(items => typeof items === "number" ? true : false);
-    let allNumber = arr.every(items => typeof items === "number" ? true : false);
-    let hasNulls = arr.some(items => items === null ? true : false);
-    let hasUndefined = arr.some(items => items === undefined ? true : false);
-    let total = arr.length;
-    let numbers = 0;
-    let strings = 0;
-    let nulls = 0;
-    let undefineds = 0;
-    let cleaned = [];
+    let isValid = Array.isArray(arr);
 
-    for (let i = 0; i < arr.length; i++) {
-        let isValues = typeof arr[i];
-
-        if (isValues === "number") {
-            numbers++;
-            cleaned.push(arr[i])
-        } else if (isValues === "string") {
-            strings++;
-        } else if (isValues === "object") {
-            nulls++;
-        } else {
-            undefineds++;
-        }
+    if (!isValid) {
+        return { isValid }
     }
+
 
     return {
-        isValid: isValid,
-        allNumber: allNumber,
-        hasNulls: hasNulls,
-        hasUndefined: hasUndefined,
-        stas: {
-            total: total,
-            numbers: numbers,
-            strings: strings,
-            nulls: nulls,
-            undefineds: undefineds
+        isValid,
+        allNumbers: arr.every(item => typeof item === "number" ? true : false),
+        hasNulls: arr.some(item => item === null ? true : false),
+        hasUndefined: arr.some(item => item === undefined ? true : false),
+        stats: {
+            total: arr.length,
+            numbers: arr.filter(item => typeof item == "number").length,
+            strings: arr.filter(item => typeof item == "string").length,
+            nulls: arr.filter(item => typeof item == "object").length,
+            undefineds: arr.filter(item => typeof item == "undefined").length
         },
-        cleaned: cleaned
+        cleaned: [...arr].filter(item => typeof item == "number")
     }
 }
+
+
+
+// Tulis function validateArrayData di sini
 
 let data1 = [1, 2, 3, 4, 5];
 let data2 = [1, "2", 3, null, 5, undefined];
