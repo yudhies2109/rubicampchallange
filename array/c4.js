@@ -1,39 +1,31 @@
 function manageQueue(arr, operations) {
-    let result = [...arr];
-    let enqueued = 0;
-    let dequeued = 0;
-    let operationCount = operations.length;
+    let enqueue = 0;
+    let dequeue = 0;
 
     for (let i = 0; i < operations.length; i++) {
-
-        let values = operations[i].split(":").at(1);
-
         if (operations[i].startsWith("enqueue")) {
-            if (!isNaN(values)) {
-                result.push(parseInt(values));
-                enqueued++;
-            } else {
-                result.push(values);
-                enqueued++;
-            }
+            let value = isNaN(operations[i].split(":")[1]) ? operations[i].split(":")[1] : parseInt(operations[i].split(":")[1]);
+            enqueue++;
+            arr.push(value);
         } else {
-            result.shift();
-            dequeued++;
+            arr.shift();
+            dequeue++
         }
-        // console.log("Type data", typeof(result[i]));
+        console.log()
     }
 
     return {
-        result: result,
+        result: arr,
         stats: {
-            enqueued: enqueued,
-            dequeued: dequeued,
-            operations: operationCount
+            enqueued: enqueue,
+            dequeued: dequeue,
+            operations: operations.length
         }
     }
 }
 
 
+// Tulis function manageQueue di sini
 
 console.log(manageQueue([1, 2], ["enqueue:3", "dequeue", "enqueue:4"]));
 console.log(manageQueue([], ["enqueue:x", "enqueue:y", "dequeue"]));
