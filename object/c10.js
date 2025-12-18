@@ -45,7 +45,7 @@ function objectAnalyzer(data) {
                     }
                 }
             } else {
-                const keys = Object.keys(data);
+                // const keys = Object.keys(data);
                 objectCount++;
 
                 for (const key in data) {
@@ -71,7 +71,7 @@ function objectAnalyzer(data) {
         },
         analysis: {
             users: {
-                count: complexData.users.length,
+                count: data.users.length,
                 totalPosts,
                 totalLikes,
                 averageLikes: totalLikes / totalPosts
@@ -110,4 +110,5 @@ let complexData = {
     }
 };
 
-console.log(objectAnalyzer(complexData));
+console.log(JSON.stringify(objectAnalyzer(complexData), null, 3));
+// console.log(objectAnalyzer(complexData));
