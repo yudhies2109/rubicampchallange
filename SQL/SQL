@@ -1,0 +1,101 @@
+-- C1 
+-- SELECT * 
+-- FROM employees
+-- ORDER BY last_name ASC
+
+-- C2
+-- SELECT first_name, last_name, salary  
+-- FROM employees
+-- WHERE salary > 55000
+-- AND department = 'Engineering'
+
+
+-- C3
+-- SELECT * 
+-- FROM employees
+-- WHERE first_name Like '%o%'
+-- AND email like '%.com'
+-- ORDER BY hire_date DESC
+
+-- C4
+-- SELECT * 
+-- FROM employees
+-- WHERE hire_date BETWEEN '2019-01-01' AND '2020-12-31'
+-- OR salary >= 65000
+-- ORDER BY salary DESC
+
+-- C5
+-- SELECT first_name, last_name, department, salary
+-- FROM employees
+-- ORDER BY salary DESC, last_name ASC
+-- LIMIT 3
+
+-- c6
+-- SELECT first_name, last_name, salary, department_name
+-- FROM employees
+-- JOIN departments 
+-- ON employees.department_id = departments.id
+
+-- c7
+-- SELECT * FROM departments
+-- SELECT * FROM employees
+-- INSERT INTO departments VALUES (5, 'Research', NULL, 100000.00);
+-- SELECT department_name, budget,
+-- COUNT(employees.id) AS employee_count 
+-- FROM departments
+-- LEFT JOIN employees
+-- ON departments.id = employees.department_id
+-- GROUP BY departments.id, departments.department_name, departments.budget
+-- ORDER BY employee_count DESC, budget DESC
+
+-- C8
+-- SELECT first_name, last_name, hire_date
+-- , DATE_PART('year', AGE(CURRENT_DATE, hire_date)) AS years_worked
+-- FROM employees 
+
+-- c9
+-- SELECT
+--     e.first_name || ' ' || e.last_name AS employee_name,
+--     e.salary AS employee_salary,
+--     COALESCE(m.first_name || ' ' || m.last_name, 'No Manager') AS manager_name,
+--     m.salary AS manager_salary
+-- FROM employees e
+-- LEFT JOIN employees m
+--     ON e.manager_id = m.id
+
+
+-- c11
+-- SELECT 
+-- first_name, 
+-- last_name, 
+-- salary,
+-- (SELECT ROUND(AVG(salary)) FROM employees) AS avg_company_salary,
+-- salary - (SELECT ROUND(AVG(salary)) FROM employees) AS salary_difference
+-- FROM employees 
+-- WHERE salary > (SELECT ROUND(AVG(salary)) FROM employees)
+
+
+-- c13
+-- SELECT * 
+-- FROM (
+-- SELECT 
+-- e.first_name,
+-- e.last_name,
+-- d.department_name,
+-- e.salary,
+-- RANK() OVER (PARTITION BY e.department_id ORDER BY e.salary DESC) AS rank_in_departement
+-- FROM employees e
+-- JOIN departments d
+-- ON e.department_id = d.id
+-- ) AS ranking
+-- WHERE rank_in_departement = 1
+
+-- C14
+-- SELECT 
+-- EXTRACT(YEAR FROM hire_date) AS hire_year,
+-- COUNT(*) AS employees_hired,
+-- ROUND(AVG(salary), 2) AS avg_salary,
+-- SUM(salary) AS total_salary
+-- SUM(COUNT(*)) OVER (ORDER BY EXTRACT(YEAR FROM hire_date)) AS cumulative_employees
+-- FROM employees
+-- GROUP BY hire_year
